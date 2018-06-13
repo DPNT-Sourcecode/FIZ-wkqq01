@@ -15,7 +15,20 @@ namespace BeFaster.App.Solutions
                 results.Add("fizz");
             if (number % 5 == 0 || numberString.Contains("5"))
                 results.Add("buzz");
-            if (results.Any())
+
+            var deluxe = false;
+            if (number % 3 == 0 && numberString.Contains("3"))
+            {
+                results.Add("fizz deluxe");
+                deluxe = true;
+            }
+            if (number % 5 == 0 && numberString.Contains("5"))
+            {
+                results.Add("buzz deluxe");
+                deluxe = true;
+            }
+
+            if (deluxe)
                 results.Add(number % 2 == 1 ? "fake deluxe" : "deluxe");
 
             return results.Any()

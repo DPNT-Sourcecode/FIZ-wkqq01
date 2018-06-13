@@ -16,20 +16,21 @@ namespace BeFaster.App.Solutions
             if (number % 5 == 0 || numberString.Contains("5"))
                 results.Add("buzz");
 
-            var deluxe = false;
+            var deluxe = new List<string>();
             if (number % 3 == 0 && numberString.Contains("3"))
             {
-                results.Add("fizz deluxe");
-                deluxe = true;
+                deluxe.Add("fizz");
             }
             if (number % 5 == 0 && numberString.Contains("5"))
             {
-                results.Add("buzz deluxe");
-                deluxe = true;
+                deluxe.Add("buzz");
             }
 
-            if (deluxe)
+            if (deluxe.Any())
+            {
+                results.Add(string.Join(" ", deluxe));
                 results.Add(number % 2 == 1 ? "fake deluxe" : "deluxe");
+            }
 
             return results.Any()
                 ? string.Join(" ", results)

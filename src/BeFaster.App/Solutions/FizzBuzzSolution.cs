@@ -1,4 +1,6 @@
-﻿using BeFaster.Runner.Exceptions;
+﻿using System.Collections.Generic;
+using System.Linq;
+using BeFaster.Runner.Exceptions;
 
 namespace BeFaster.App.Solutions
 {
@@ -6,7 +8,13 @@ namespace BeFaster.App.Solutions
     {
         public static string FizzBuzz(int number)
         {
-            throw new SolutionNotImplementedException();
+            var results = new List<string>();
+            if (number % 3 == 0) results.Add("fizz");
+            if (number % 5 == 0) results.Add("buzz");
+
+            return results.Any()
+                ? string.Join(" ", results)
+                : number.ToString();
         }
     }
 }

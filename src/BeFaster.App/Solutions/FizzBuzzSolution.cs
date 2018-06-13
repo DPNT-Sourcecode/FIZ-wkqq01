@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using BeFaster.Runner.Exceptions;
 
 namespace BeFaster.App.Solutions
 {
@@ -14,6 +13,7 @@ namespace BeFaster.App.Solutions
 
             if (number % 3 == 0 || numberString.Contains("3")) results.Add("fizz");
             if (number % 5 == 0 || numberString.Contains("5")) results.Add("buzz");
+            if (number > 10 && number.ToString().Distinct().Count() == 1) results.Add("deluxe");
 
             return results.Any()
                 ? string.Join(" ", results)

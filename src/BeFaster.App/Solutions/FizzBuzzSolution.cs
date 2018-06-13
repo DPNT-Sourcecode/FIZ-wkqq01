@@ -11,6 +11,8 @@ namespace BeFaster.App.Solutions
 
             var results = new List<string>();
 
+            // FIZ_R5 - All the previous rules for "fizz" and "buzz" are still valid
+            // ↑ bullshit!
             if (number % 3 == 0 || numberString.Contains("3"))
                 results.Add("fizz");
             if (number % 5 == 0 || numberString.Contains("5"))

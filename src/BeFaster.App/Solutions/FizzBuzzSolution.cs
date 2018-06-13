@@ -11,16 +11,15 @@ namespace BeFaster.App.Solutions
 
             var results = new List<string>();
 
-            var deluxe = new List<string>();
+            bool fizz = false, buzz = false, deluxe = false;
+
             if (number % 3 == 0 && numberString.Contains("3"))
             {
-                results.Remove("fizz");
-                deluxe.Add("fizz");
+                deluxe = fizz = true;
             }
             if (number % 5 == 0 && numberString.Contains("5"))
             {
-                results.Remove("buzz");
-                deluxe.Add("buzz");
+                deluxe = buzz = true;
             }
 
             if (deluxe.Any())

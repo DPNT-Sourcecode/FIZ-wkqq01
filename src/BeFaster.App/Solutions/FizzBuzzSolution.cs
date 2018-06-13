@@ -8,9 +8,12 @@ namespace BeFaster.App.Solutions
     {
         public static string FizzBuzz(int number)
         {
+            var numberString = number.ToString();
+
             var results = new List<string>();
-            if (number % 3 == 0) results.Add("fizz");
-            if (number % 5 == 0) results.Add("buzz");
+
+            if (number % 3 == 0 || numberString.Contains("3")) results.Add("fizz");
+            if (number % 5 == 0 || numberString.Contains("5")) results.Add("buzz");
 
             return results.Any()
                 ? string.Join(" ", results)

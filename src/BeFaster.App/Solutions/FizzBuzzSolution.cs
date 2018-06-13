@@ -21,10 +21,12 @@ namespace BeFaster.App.Solutions
             var deluxe = new List<string>();
             if (number % 3 == 0 && numberString.Contains("3"))
             {
+                results.Remove("fizz");
                 deluxe.Add("fizz");
             }
             if (number % 5 == 0 && numberString.Contains("5"))
             {
+                results.Remove("buzz");
                 deluxe.Add("buzz");
             }
 

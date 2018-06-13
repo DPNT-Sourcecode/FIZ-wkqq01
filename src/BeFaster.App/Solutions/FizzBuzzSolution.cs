@@ -15,7 +15,7 @@ namespace BeFaster.App.Solutions
                 results.Add("fizz");
             if (number % 5 == 0 || numberString.Contains("5"))
                 results.Add("buzz");
-            if (number > 10 && number.ToString().Distinct().Count() == 1)
+            if (results.Any())
                 results.Add(number % 2 == 1 ? "fake deluxe" : "deluxe");
 
             return results.Any()
